@@ -3,7 +3,7 @@ import Noticia from "./Noticia";
 
 const ListaNoticias = () => {
   return (
-    <Container fluid className="my-3 border border-2 border-dark">
+    <Container fluid className="py-3 border border-2 border-dark">
       <Noticia />
     </Container>
   );
