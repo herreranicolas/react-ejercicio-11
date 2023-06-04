@@ -6,8 +6,16 @@ function Formulario() {
   const [categoria, setCategoria] = useState("");
 
   useEffect(() => {
-    console.log("Consultar API");
+    consultarAPI();
   }, [categoria]);
+
+  const consultarAPI = async () => {
+    const respuesta = await fetch(
+      `https://newsdata.io/api/1/news?apikey=pub_239716e78b97b290380b8251513e029f94c32&category=${categoria}`
+    );
+    const noticias = await respuesta.json();
+    console.log(noticias);
+  };
 
   return (
     <>
