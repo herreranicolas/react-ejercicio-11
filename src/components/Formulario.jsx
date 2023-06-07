@@ -19,7 +19,6 @@ function Formulario() {
       );
       const noticias = await respuesta.json();
       setArrayNoticias(noticias.results);
-      console.log(arrayNoticias);
     } catch (error) {
       console.log(error);
     }
