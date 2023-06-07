@@ -14,11 +14,12 @@ function Formulario() {
     try {
       const respuesta = await fetch(
         `https://newsdata.io/api/1/news?apikey=pub_239716e78b97b290380b8251513e029f94c32&category=${
-          categoria || "top"
-        }`
+          categoria || "sports"
+        }&language=es`
       );
       const noticias = await respuesta.json();
       setArrayNoticias(noticias.results);
+      console.log(arrayNoticias);
     } catch (error) {
       console.log(error);
     }

@@ -1,17 +1,14 @@
-import { Button, Card } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 
-function Noticia() {
+function Noticia({ imagen, titulo, descripcion, link }) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
+    <Card as={Col} style={{ width: "18rem" }} className="me-md-3 mb-3">
+      <Card.Img variant="top" src={imagen || `https://picsum.photos/200/120`} />
+      <Card.Title>{titulo}</Card.Title>
+      <Card.Text className="text-truncate">{descripcion}</Card.Text>
+      <a className="btn btn-primary mt-auto mb-3" href={link} target="_blank">
+        Ver noticia completa
+      </a>
     </Card>
   );
 }
